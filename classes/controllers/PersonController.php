@@ -16,7 +16,7 @@ class PersonController
     }
 
     public function getAllPeople() {
-        $stmt = $this->conn->prepare("SELECT osoby.name, osoby.surname, oh.year, oh.city, oh.type, umiestnenia.discipline FROM osoby JOIN umiestnenia ON osoby.id = umiestnenia.person_id JOIN oh ON oh.id = umiestnenia.oh_id WHERE umiestnenia.placing = 1");
+        $stmt = $this->conn->prepare("SELECT osoby.id, osoby.name, osoby.surname, oh.year, oh.city, oh.type, umiestnenia.discipline FROM osoby JOIN umiestnenia ON osoby.id = umiestnenia.person_id JOIN oh ON oh.id = umiestnenia.oh_id");
         $stmt->execute();
         $people = $stmt->fetchAll(PDO::FETCH_CLASS, "PersonTable1");
 
@@ -25,7 +25,7 @@ class PersonController
 
     public function getGoldMedalists()
     {
-        $stmt = $this->conn->prepare("select osoby.*, sum(u.placing = 1) as gold_count from osoby join umiestnenia u on osoby.id = u.person_id WHERE u.placing = 1 group by osoby.id;");
+        $stmt = $this->conn->prepare("select osoby.*, sum(u.placing = 1) as gold_count from osoby join umiestnenia u on osoby.id = u.person_id WHERE u.placing = 1 group by osoby.id ORDER BY sum(u.placing = 1) DESC;");
         $stmt->execute();
         $people = $stmt->fetchAll(PDO::FETCH_CLASS, "PersonTable2");
 
@@ -79,6 +79,12 @@ class PersonController
         $stmt->bindParam(":name", $name, PDO::PARAM_STR);
         $stmt->bindParam(":surname", $surname, PDO::PARAM_STR);
         $stmt->bindParam(":personId", $id, PDO::PARAM_INT);
+        $stmt->execute();
+    }
+
+    public function deletePerson($id) {
+        $stmt = $this->conn->prepare("DELETE FROM osoby WHERE osoby.id = :id");
+        $stmt->bindParam(":id", $id, PDO::PARAM_INT);
         $stmt->execute();
     }
 

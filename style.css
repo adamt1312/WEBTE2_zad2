@@ -46,3 +46,11 @@ img {
     position: absolute;
     max-width: 50%!important;
 }
+table a {
+    margin: 10px;
+}
+#createBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

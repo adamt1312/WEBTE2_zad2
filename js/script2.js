@@ -6,12 +6,12 @@ const t2 = document.getElementById("t2");
 
 btn1.addEventListener('click', function(event) {
     t2.style.display = 'none';
-    t1.style.display = 'block';
+    t1.style.display = 'inline-table';
 })
 
 btn2.addEventListener('click', function(event) {
     t1.style.display = 'none';
-    t2.style.display = 'block';
+    t2.style.display = 'inline-table';
 })
 
 const goldCounts = document.querySelectorAll('.gc');

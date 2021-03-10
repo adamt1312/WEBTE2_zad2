@@ -28,7 +28,7 @@ $personController = new PersonController();
         <div class="title text-xl font-medium">Zvol tabuľku</div>
         <div class="w-full py-3">
             <div class="inline-block mr-2 mt-2">
-                <button type="button" class="focus:outline-none text-white text-sm py-2.5 px-5 rounded-md bg-gradient-to-r from-gray-400 to-gray-600 transform hover:scale-110" id="btn1">Olympijský víťazi</button>
+                <button type="button" class="focus:outline-none text-white text-sm py-2.5 px-5 rounded-md bg-gradient-to-r from-gray-400 to-gray-600 transform hover:scale-110" id="btn1">Olympijskí víťazi</button>
             </div>
             <div class="inline-block mr-2 mt-2">
                 <button type="button" class="focus:outline-none text-white text-sm py-2.5 px-5 rounded-md bg-gradient-to-r from-yellow-400 to-yellow-600 transform hover:scale-110" id="btn2">Počet zlatých medailí</button>
@@ -37,7 +37,7 @@ $personController = new PersonController();
     </div>
 
     <div id="table_wrapper">
-<!--        <img src="og.png" id="img">-->
+        <img src="og.png" id="img">
         <table class="min-w-min	 w-full table-auto bg-gray-100 bg-opacity-90" id="t1">
             <thead>
             <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
@@ -66,18 +66,24 @@ $personController = new PersonController();
                 <td class="py-3 px-6 text-left">Meno</td>
                 <td class="py-3 px-6 text-left">Priezvisko</td>
                 <td class="py-3 px-6 text-left">Počet zlatých medailí</td>
+                <td class="py-3 px-6 text-center"></td>
             </tr>
             </thead>
 
             <tbody class="text-gray-600 text-sm font-light">
                 <?php
                     $people = $personController->getGoldMedalists();
-                    foreach ($people as $person) {
-                        echo $person->getRow();
+                    for ($i = 0; $i < 10; $i++) {
+                        echo $people[$i]->getRow();
                     }
                 ?>
             </tbody>
         </table>
+    </div>
+    <div id="createBtn">
+        <a href="createPerson.php">
+            <i class="fas fa-user-plus fa-3x"></i>
+        </a>
     </div>
 </div>
 
@@ -87,6 +93,6 @@ $personController = new PersonController();
         Adam Trebichalský, 98014<br>
     </div>
 </footer>
-<script src="js/script.js"></script>
+<script src="js/script2.js"></script>
 </body>
 </html>

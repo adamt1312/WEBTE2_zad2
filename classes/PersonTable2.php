@@ -73,10 +73,8 @@ class PersonTable2
         $this->placements = $placements;
     }
 
-
-
     public function getRow() {
-        return "<tr class=\"border-b border-gray-200 hover:bg-gray-100\">
+        return "<tr class=\"border-b border-gray-200 hover:bg-blue-200 text-black\">
                     <td class=\"py-3 px-6 text-left whitespace-nowrap\">
                         <div class=\"flex items-center\">
                             <i class=\"fas fa-medal\" style='margin-right: 5px'></i>     
@@ -92,7 +90,11 @@ class PersonTable2
                         <div class=\"flex items-center appendH\" style='justify-content: center'>   
                             <span class='gc'>$this->gold_count</span>
                         </div>
-                    </td>       
+                    </td>   
+                     <td class=\"py-3 px-6 text-center\" style='justify-content: space-evenly'>
+                            <a href='../editPerson.php'><i class=\"fas fa-user-edit fa-lg\"></i></a>
+                            <a href='../deletePerson.php?id=$this->id'><i class=\"fas fa-trash-alt fa-lg\"></i></a>                    
+                    </td>      
                 </tr>";
     }
 
