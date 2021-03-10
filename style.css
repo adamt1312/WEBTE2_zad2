@@ -12,3 +12,37 @@ body {
     border-top: 2px solid black;
     margin-top: 20px;
 }
+#wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    /*background: url('og.png') no-repeat;*/
+    /*background-size: 100%;*/
+}
+#t1 {
+    margin: 30px;
+}
+#t2 {
+    margin: 30px;
+    display: none;
+}
+
+#title {
+    font-family: Barlow;
+    text-align: center;
+    margin: 30px;
+    font-size: 50px;
+}
+#table_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+img {
+    z-index: -1;
+    position: absolute;
+    max-width: 50%!important;
+}
