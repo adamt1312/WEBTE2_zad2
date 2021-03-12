@@ -3,6 +3,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    height: 100vh;
 }
 #ftr {
     display: flex;
@@ -13,6 +14,7 @@ body {
     margin-top: 20px;
     font-family: Barlow;
     background-color: rgba(59, 130, 246, 0.5);
+
 }
 #wrapper {
     display: flex;
@@ -37,7 +39,6 @@ body {
     margin: 30px;
     font-size: 50px;
 }
-
 #table_wrapper {
     display: flex;
     flex-direction: column;
@@ -49,9 +50,7 @@ img {
     position: absolute;
     max-width: 50%!important;
 }
-table a {
-    margin: 10px;
-}
+
 #createBtn {
     display: flex;
     justify-content: center;

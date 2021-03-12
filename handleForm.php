@@ -9,11 +9,12 @@ if(isset($_POST['name'])) {
 
 
     // EDIT
-    if(isset($_POST['id'])) {
-        $person = $personController->getPerson($_POST['id']);
-        $person->setName($_POST['name']);
-        $person->setSurname($_POST['surname']);
-        $personController->updatePerson($person);
+    if($_POST['id'] ===! null) {
+        echo "is set id:". $_POST['id'];
+//        $person = $personController->getPerson($_POST['id']);
+//        $person->setName($_POST['name']);
+//        $person->setSurname($_POST['surname']);
+//        $personController->updatePerson($person);
 
     }
     // CREATE
@@ -31,6 +32,6 @@ if(isset($_POST['name'])) {
         $personController->insertPerson($person);
     }
 
-//    header('Location: index.php');
+    header('Location: index.php');
 }
 

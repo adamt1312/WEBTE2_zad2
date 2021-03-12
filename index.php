@@ -73,7 +73,7 @@ $personController = new PersonController();
             <tbody class="text-gray-600 text-sm font-light">
                 <?php
                     $people = $personController->getGoldMedalists();
-                    for ($i = 0; $i < 10; $i++) {
+                    for ($i = 0; $i < count($people); $i++) {
                         echo $people[$i]->getRow();
                     }
                 ?>

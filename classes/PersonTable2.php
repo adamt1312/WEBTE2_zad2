@@ -18,7 +18,7 @@ class PersonTable2
     private $placements;
 
 
-    public function setId(string $id): void
+    public function setId(int $id): void
     {
         $this->id = intval($id);
     }
@@ -183,13 +183,17 @@ class PersonTable2
         return "<tr class=\"border-b border-gray-200 hover:bg-blue-200 text-black\">
                     <td class=\"py-3 px-6 text-left whitespace-nowrap\">
                         <div class=\"flex items-center\">
-                            <i class=\"fas fa-medal\" style='margin-right: 5px'></i>     
+                        <a href='personDetail.php?id=$this->id'>
+                            <i class=\"fas fa-medal\" style='margin-right: 5px; color: #FFD700; text-shadow: 0 0 4px black;'></i>     
                             <span class=\"font-medium\">$this->name</span>
+                        </a>                            
                         </div>
                     </td>
                      <td class=\"py-3 px-6 text-left whitespace-nowrap\">
                         <div class=\"flex items-center\">  
-                            <span class=\"font-medium\">$this->surname</span>
+                            <a href='personDetail.php?id=$this->id'> 
+                                <span class=\"font-medium\">$this->surname</span>
+                            </a>
                         </div>
                     </td>
                      <td class=\"py-3 px-6 text-center\">
@@ -198,7 +202,7 @@ class PersonTable2
                         </div>
                     </td>   
                      <td class=\"py-3 px-6 text-center\" style='justify-content: space-evenly'>
-                     <div style='display: flex; flex-direction: row; justify-content: space-evenly'>
+                     <div style='display: flex; flex-direction: row; justify-content: space-evenly; min-width: 70px;'>
                          <form method=\"post\" action=\"editPerson.php\">
                             <button type='submit' name='id' value=\"$this->id\"><i class=\"fa fa-user-edit fa-lg\"></i></button>
                          </form>  
