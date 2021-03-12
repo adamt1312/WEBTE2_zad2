@@ -17,6 +17,13 @@ class PersonTable2
 
     private $placements;
 
+
+    public function setId(string $id): void
+    {
+        $this->id = intval($id);
+    }
+
+
     /**
      * @return int
      */
@@ -73,6 +80,105 @@ class PersonTable2
         $this->placements = $placements;
     }
 
+    /**
+     * @return string
+     */
+    public function getBirthDay(): string
+    {
+        return $this->birth_day;
+    }
+
+    /**
+     * @param string $birth_day
+     */
+    public function setBirthDay(string $birth_day): void
+    {
+        $this->birth_day = $birth_day;
+    }
+
+    /**
+     * @return string
+     */
+    public function getBirthPlace(): string
+    {
+        return $this->birth_place;
+    }
+
+    /**
+     * @param string $birth_place
+     */
+    public function setBirthPlace(string $birth_place): void
+    {
+        $this->birth_place = $birth_place;
+    }
+
+    /**
+     * @return string
+     */
+    public function getBirthCountry(): string
+    {
+        return $this->birth_country;
+    }
+
+    /**
+     * @param string $birth_country
+     */
+    public function setBirthCountry(string $birth_country): void
+    {
+        $this->birth_country = $birth_country;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getDeathDay(): ?string
+    {
+        return $this->death_day;
+    }
+
+    /**
+     * @param string|null $death_day
+     */
+    public function setDeathDay(?string $death_day): void
+    {
+        $this->death_day = $death_day;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getDeathPlace(): ?string
+    {
+        return $this->death_place;
+    }
+
+    /**
+     * @param string|null $death_place
+     */
+    public function setDeathPlace(?string $death_place): void
+    {
+        $this->death_place = $death_place;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getDeathCountry(): ?string
+    {
+        return $this->death_country;
+    }
+
+    /**
+     * @param string|null $death_country
+     */
+    public function setDeathCountry(?string $death_country): void
+    {
+        $this->death_country = $death_country;
+    }
+
+
+
+
     public function getRow() {
         return "<tr class=\"border-b border-gray-200 hover:bg-blue-200 text-black\">
                     <td class=\"py-3 px-6 text-left whitespace-nowrap\">
@@ -92,10 +198,16 @@ class PersonTable2
                         </div>
                     </td>   
                      <td class=\"py-3 px-6 text-center\" style='justify-content: space-evenly'>
-                            <a href='../editPerson.php'><i class=\"fas fa-user-edit fa-lg\"></i></a>
-                            <a href='../deletePerson.php?id=$this->id'><i class=\"fas fa-trash-alt fa-lg\"></i></a>                    
+                     <div style='display: flex; flex-direction: row; justify-content: space-evenly'>
+                         <form method=\"post\" action=\"editPerson.php\">
+                            <button type='submit' name='id' value=\"$this->id\"><i class=\"fa fa-user-edit fa-lg\"></i></button>
+                         </form>  
+                         <form method=\"post\" action=\"deletePerson.php\">
+                            <button type='submit'  name='id' value=\"$this->id\"><i class=\"fa fa-trash-alt fa-lg\"></i></button>
+                         </form>
+                     </div>
+                                                                                                       
                     </td>      
                 </tr>";
     }
-
 }

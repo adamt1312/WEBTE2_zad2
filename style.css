@@ -11,6 +11,8 @@ body {
     align-items: center;
     border-top: 2px solid black;
     margin-top: 20px;
+    font-family: Barlow;
+    background-color: rgba(59, 130, 246, 0.5);
 }
 #wrapper {
     display: flex;
@@ -35,6 +37,7 @@ body {
     margin: 30px;
     font-size: 50px;
 }
+
 #table_wrapper {
     display: flex;
     flex-direction: column;
@@ -53,4 +56,11 @@ table a {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: transform .2s;
+
+}
+#createBtn:hover {
+    -ms-transform: scale(1.3); /* IE 9 */
+    -webkit-transform: scale(1.3); /* Safari 3-8 */
+    transform: scale(1.3);
 }

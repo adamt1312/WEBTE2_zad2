@@ -1,9 +1,9 @@
 <?php
 
-require_once "classes/PersonTable2.php";
+require_once "classes/PersonTable1.php";
 require_once "classes/Placement.php";
 require_once "classes/helper/Database.php";
-require_once "classes/PersonTable1.php";
+require_once "classes/PersonTable2.php";
 
 class PersonController
 {
@@ -49,25 +49,32 @@ class PersonController
         $stmt->execute();
         $stmt->setFetchMode(PDO::FETCH_CLASS, "PersonTable2");
         $person = $stmt->fetch();
-//
-//        $stmt = $this->conn->prepare("select umiestnenia.*, oh.city from umiestnenia join oh on umiestnenia.oh_id = oh.id where person_id = :personId; ");
-//        $stmt->bindParam(":personId", $person->getId(), PDO::PARAM_INT);
-//        $stmt->execute();
-//        $placements = $stmt->fetchAll(PDO::FETCH_CLASS, "Placement");
-//        $person->setPlacements($placements);
 
         return $person;
     }
 
     public function insertPerson(PersonTable2 $person)
     {
-        $stmt = $this->conn->prepare("Insert into osoby (name, surname, birth_day, birth_place, birth_country) values (:name, :surname, '1.1.1992', 'Trnava', 'Slovensko')");
-        $name = $person->getName();
-        $surname = $person->getSurname();
-        $stmt->bindParam(":name", $name, PDO::PARAM_STR);
-        $stmt->bindParam(":surname", $surname, PDO::PARAM_STR);
-        $stmt->execute();
-        return $this->conn->lastInsertId();
+        var_dump($person);
+//        $stmt = $this->conn->prepare("Insert into osoby (name, surname, birth_day, birth_place, birth_country, death_day, death_place, death_country) values (:name, :surname, :birth_day, :birth_place, :birth_country, :death_day, :death_place, :death_country)");
+//        $name = $person->getName();
+//        $surname = $person->getSurname();
+//        $birth_day = $person->getBirthDay();
+//        $birth_place = $person->getBirthPlace();
+//        $birth_country = $person->getBirthCountry();
+//
+//        $stmt->bindParam(":name", $name, PDO::PARAM_STR);
+//        $stmt->bindParam(":surname", $surname, PDO::PARAM_STR);
+//        $stmt->bindParam(":birth_day", $birth_day, PDO::PARAM_STR);
+//        $stmt->bindParam(":birth_place", $person->getBirthPlace(), PDO::PARAM_STR);
+//        $stmt->bindParam(":birth_country", $person->getBirthCountry(), PDO::PARAM_STR);
+//        $stmt->bindParam(":death_day", $person->getDeathDay(), PDO::PARAM_STR);
+//        $stmt->bindParam(":death_place", $person->getDeathPlace(), PDO::PARAM_STR);
+//        $stmt->bindParam(":death_country", $person->getDeathCountry(), PDO::PARAM_STR);
+//
+//
+//        $stmt->execute();
+//        return $this->conn->lastInsertId();
     }
 
     public function updatePerson(PersonTable2 $person)

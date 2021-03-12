@@ -20,10 +20,11 @@ const icon = document.createElement('img');
 icon.src = 'gold-medal.svg'
 icon.style.width = "10px"
 
-// for (i = 0; i < appendH.length; i++) {
-//     for (j = 0; i < parseInt("3"); j++) {
-//         appendH[i].appendChild(icon)
-//     }
-// }
+$(document).ready( function () {
+    $('#t1').DataTable({searching: false, paging: false, info: false, "order": [[ 2, "desc" ]]
+    });
+    $('#t2').DataTable({searching: false, paging: false, info: false, "order": [[ 2, "desc" ]]});
+
+} );
 
 

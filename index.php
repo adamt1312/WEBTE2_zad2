@@ -2,11 +2,6 @@
 require_once "classes/controllers/PersonController.php";
 
 $personController = new PersonController();
-
- function getMedalIcon($n) {
-
- }
-
 ?>
 
 <!doctype html>
@@ -17,7 +12,11 @@ $personController = new PersonController();
     <link rel="stylesheet" href="style.css">
     <link href="https://unpkg.com/tailwindcss@2.0.2/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Barlow&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/e73d803768.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
 </head>
 <body>
 
@@ -38,15 +37,16 @@ $personController = new PersonController();
 
     <div id="table_wrapper">
         <img src="og.png" id="img">
-        <table class="min-w-min	 w-full table-auto bg-gray-100 bg-opacity-90" id="t1">
+        <table class="min-w-min	 w-full table-auto bg-gray-100 bg-opacity-90" id="t1" >
             <thead>
             <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
                 <td class="py-3 px-6 text-left">Meno</td>
                 <td class="py-3 px-6 text-left">Priezvisko</td>
                 <td class="py-3 px-6 text-left">Rok</td>
                 <td class="py-3 px-6 text-left">Mesto</td>
-                <td class="py-3 px-6 text-left">Typ OH</td>
+                <td class="py-3 px-6 text-left" style="width: 58px!important;">Typ OH</td>
                 <td class="py-3 px-6 text-left">Disciplína</td>
+                <td class="py-3 px-6 text-left"></td>
             </tr>
             </thead>
 
@@ -60,7 +60,7 @@ $personController = new PersonController();
             </tbody>
         </table>
 
-        <table class="min-w-max w-full table-auto bg-gray-100 bg-opacity-90" id="t2">
+        <table class="min-w-max w-full table-auto bg-gray-100 bg-opacity-90 tablesorter" id="t2">
             <thead>
             <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
                 <td class="py-3 px-6 text-left">Meno</td>
@@ -88,11 +88,11 @@ $personController = new PersonController();
 </div>
 
 
-<footer>
+<footer style="width: 50%; ">
     <div id="ftr">
         Adam Trebichalský, 98014<br>
     </div>
 </footer>
-<script src="js/script2.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
