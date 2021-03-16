@@ -15,14 +15,14 @@ $personController = new PersonController();
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/e73d803768.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css">
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
+    <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
 </head>
 <body>
 
 
 <div id="wrapper">
-    <h1 id="title">ZADANIE 2. - DATABASE <i class="fas fa-database" style="text-shadow: 6px 6px 15px 9px rgba(0,0,0,0.18)"></i></h1>
+    <h1 id="title">ZADANIE 2. - DATABASE <i class="fas fa-database" style="text-shadow: 0px 15px 9px rgba(0,0,0,0.18)"></i></h1>
     <div class="card  py-3 px-5 rounded-xl flex flex-col mb-5 bg-gradient-to-r from-gray-200 to-gray-300" style="font-family: Barlow;">
         <div class="title text-xl font-medium">Zvol tabuľku</div>
         <div class="w-full py-3">
@@ -36,7 +36,7 @@ $personController = new PersonController();
     </div>
 
     <div id="table_wrapper">
-        <img src="og.png" id="img">
+        <img src="og.png" id="img" alt="background">
         <table class="min-w-min	 w-full table-auto bg-gray-100 bg-opacity-90" id="t1" >
             <thead>
             <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
@@ -46,7 +46,6 @@ $personController = new PersonController();
                 <td class="py-3 px-6 text-left">Mesto</td>
                 <td class="py-3 px-6 text-left" style="width: 58px!important;">Typ OH</td>
                 <td class="py-3 px-6 text-left">Disciplína</td>
-                <td class="py-3 px-6 text-left"></td>
             </tr>
             </thead>
 
@@ -88,11 +87,10 @@ $personController = new PersonController();
 </div>
 
 
-<footer style="width: 50%; ">
+
+<script src="js/script.js"></script>
+
     <div id="ftr">
         Adam Trebichalský, 98014<br>
     </div>
-</footer>
-<script src="js/script.js"></script>
-</body>
 </html>

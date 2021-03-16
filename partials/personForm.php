@@ -1,4 +1,4 @@
-<div class="m-7" >
+<div class="m-7">
     <form method="post" action="./handleForm.php" id="form">
 
         <input type="hidden" name="id" value="<?php echo isset($person) ? $person->getId() : null ?>">

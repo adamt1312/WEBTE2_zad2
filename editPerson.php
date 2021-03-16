@@ -4,6 +4,7 @@ $personController = new PersonController();
 
 if(isset($_POST['id'])) {
     $person = $personController->getPerson($_POST['id']);
+    echo $person->getId();
 }
 ?>
 

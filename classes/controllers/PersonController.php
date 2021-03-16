@@ -49,7 +49,7 @@ class PersonController
         $stmt->setFetchMode(PDO::FETCH_CLASS, "PersonTable2");
         $person = $stmt->fetch();
 
-        $stmt = $this->conn->prepare("select umiestnenia.*, oh.city, oh.year, oh.type from umiestnenia join oh on umiestnenia.oh_id = oh.id where person_id = :personId; ");
+        $stmt = $this->conn->prepare("select umiestnenia.*, oh.city, oh.year, oh.type from umiestnenia join oh on umiestnenia.oh_id = oh.id where person_id = :personId ORDER BY umiestnenia.placing ASC ; ");
         $stmt->bindParam(":personId", $id, PDO::PARAM_INT);
         $stmt->execute();
         $placements = $stmt->fetchAll(PDO::FETCH_CLASS, "Placement");
@@ -87,12 +87,24 @@ class PersonController
 
     public function updatePerson(PersonTable2 $person)
     {
-        $stmt = $this->conn->prepare("Update osoby set name=:name, surname=:surname where id = :personId");
+        $stmt = $this->conn->prepare("Update osoby set name=:name, surname=:surname, birth_day=:birth_day, birth_place=:birth_place, birth_country=:birth_country, death_day=:death_day, death_place=:death_place, death_country=:death_country  where id = :personId");
         $name = $person->getName();
         $surname = $person->getSurname();
+        $birth_day = $person->getBirthDay();
+        $birth_place = $person->getBirthPlace();
+        $birth_country = $person->getBirthCountry();
+        $death_day = $person->getDeathDay();
+        $death_place = $person->getDeathPlace();
+        $death_country = $person->getDeathCountry();
         $id = $person->getId();
         $stmt->bindParam(":name", $name, PDO::PARAM_STR);
         $stmt->bindParam(":surname", $surname, PDO::PARAM_STR);
+        $stmt->bindParam(":birth_day", $birth_day, PDO::PARAM_STR);
+        $stmt->bindParam(":birth_place", $birth_place, PDO::PARAM_STR);
+        $stmt->bindParam(":birth_country", $birth_country, PDO::PARAM_STR);
+        $stmt->bindParam(":death_day", $death_day, PDO::PARAM_STR);
+        $stmt->bindParam(":death_place", $death_place, PDO::PARAM_STR);
+        $stmt->bindParam(":death_country", $death_country, PDO::PARAM_STR);
         $stmt->bindParam(":personId", $id, PDO::PARAM_INT);
         $stmt->execute();
     }

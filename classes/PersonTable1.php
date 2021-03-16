@@ -55,18 +55,20 @@ class PersonTable1 {
                             <span>$this->discipline</span>
                         </div>
                     </td>  
-                    <td class=\"py-3 px-6 text-center\" style='justify-content: space-evenly'>
-                         <div style='display: flex; flex-direction: row; justify-content: space-evenly; min-width: 70px;'>
-                             <form action=\"\" method=\"post\">
-                                <button><i class=\"fa fa-user-edit fa-lg\"></i></button>
-                             </form>  
-                             <form method=\"post\" action=\"deletePerson.php\">
-                                <button type='submit'  name='id' value=\"$this->id\"><i class=\"fa fa-trash-alt fa-lg\"></i></button>
-                             </form>
-                         </div>                                                                                                       
-                    </td>      
+                     
                          
                 </tr>";
     }
 }
+
+//<td class=\"py-3 px-6 text-center\" style='justify-content: space-evenly'>
+//                         <div style='display: flex; flex-direction: row; justify-content: space-evenly; min-width: 70px;'>
+//                             <form action=\"\" method=\"post\">
+//                                <button><i class=\"fa fa-user-edit fa-lg\"></i></button>
+//                             </form>
+//                             <form method=\"post\" action=\"deletePerson.php\">
+//                                <button type='submit'  name='id' value=\"$this->id\"><i class=\"fa fa-trash-alt fa-lg\"></i></button>
+//                             </form>
+//                         </div>
+//                    </td>
 

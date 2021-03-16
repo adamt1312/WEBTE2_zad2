@@ -1,19 +1,22 @@
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 100vh;
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
+    /*flex-direction: column;*/
+    /*height: 100vh;*/
 }
 #ftr {
     display: flex;
     flex: 1;
+    width: 100%;
     justify-content: center;
     align-items: center;
     border-top: 2px solid black;
     margin-top: 20px;
     font-family: Barlow;
     background-color: rgba(59, 130, 246, 0.5);
+    position: static;
+    bottom: 0;
 
 }
 #wrapper {
